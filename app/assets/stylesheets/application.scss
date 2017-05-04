@@ -1,0 +1,176 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+//GOOGLE FONTS
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+$white: #fff;
+$offwhite: #eee;
+$gray: #999;
+$dark-gray: #333;
+$black: #212121;
+$red: #990000;
+$transition-secs: .5s;
+$typography-headers: 'Oswald', sans-serif;
+
+@import "mixins";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "mediafiles";
+.padding-0{
+    padding-right:0;
+    padding-left:0;
+}
+
+.tight{
+	padding: 0;
+	margin: 0;	
+}
+
+a,button{
+	@include transition-time($transition-secs);	
+}
+
+.paddedTop{
+	padding-top: 1em;
+}
+.paddedTopBottom{
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+.paddedTopBottom-2x{
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: $typography-headers;
+	text-transform: uppercase;
+}
+.myApp{
+
+  min-height: 100vh;
+  flex-direction: column;
+}
+header{
+	padding: 1em;
+
+	background-color: $red;
+	color: $offwhite;
+	text-align: left;
+	h1{
+		@extend .tight;
+	}
+}
+.navbar-toggle {
+	float: left;
+
+	.icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #cccccc;
+  border-radius: 1px;
+}
+}
+
+section#main{
+	flex: 1;
+	background-color: $black;
+	color: $white;
+
+	#navWrapper{
+		/* display: none; */
+		@extend .paddedTop;
+		background-color: $dark-gray;
+		color: $offwhite;
+		font-family: $typography-headers;
+		text-transform: uppercase;
+	}
+
+	#contentWrapper{
+		@extend .paddedTopBottom-2x;
+		background-color: $offwhite;
+		color: $dark-gray;
+	}
+}
+
+footer{
+	padding: 2em 0;
+	font-size:.8em;
+	background-color: $gray;
+	color: $offwhite;
+}
+
+@media screen and (min-width:768px){
+	section#main{
+		background-color: $offwhite;
+	}
+	#main2 > .row{
+		display: table;
+		background-color: $dark-gray;
+		width: 100%;
+			#navWrapper, #contentWrapper{
+				display: table-cell;
+			}
+
+			#contentWrapper{
+				min-height: 85vh;
+			}
+	}
+}
+
+
+#mainMenu{	
+	font-size: 2rem;
+	padding:0;
+	margin:0;
+	list-style: none;
+
+	a{
+		color: $offwhite;
+		text-decoration: none;
+		display: block;
+		padding: 5px;
+		border-left: 5px solid transparent;
+
+		&:hover, &.active{
+			color: $white;
+			padding-left: 15px;
+			border-left: 5px solid $red;
+			background-color: $gray;
+		}
+	}
+
+	.dropdown-menu{
+		background-color: transparent;
+
+		a:hover{
+			background-color: $gray;
+		}
+	}
+
+	li.current{
+		a{
+			color: $white;
+			padding-left: 15px;
+			border-left: 5px solid $red;
+			background-color: $gray;
+		}
+	}
+}
+
+/*
+.category-selector{
+	background: $dark-gray;
+	color: $white;
+	border: none;
+
+	&:hover, &.active{
+		background-color: $red;
+	}
+}
+*/
+
+input[name="commit"]{
+	@extend .btn;
+	@extend .btn-primary;
+}

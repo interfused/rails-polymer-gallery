@@ -1,0 +1,25 @@
+<dom-module id="detail-element">
+<link rel="stylesheet" href="detail-element.css" />
+<template>
+
+	<div id="detail" class$="{{theme}}">
+		<div id="imgWrapper">    
+			<img src="{{imgurl}}" alt="{{alttext}}" >
+		</div>
+		<div id="detailText">
+			<h2>{{category}}</h2>
+			<div>
+				{{description}}
+			</div>
+			<button on-click="searchGoogle">More on Google</button>
+			<div id="closeBtn" on-click="handleClick">
+				&times;
+			</div>
+		</div>
+
+
+	</div>
+</template>
+
+<script src="detail-element.js"></script>
+</dom-module>

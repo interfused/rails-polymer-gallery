@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PolymerV1</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= html_import_tag 'application'%>
+  </head>
+
+  <body class="myApp">
+    <header class="header">
+      <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button> -->
+    <h1>Rails &amp; Polymer Components Gallery Project</h1>
+  </header>
+  <section id="main">
+    <div id="main2" class="container-fluid">
+  <div class="row">
+    <div id="navWrapper" class="col-sm-3 col-lg-2">
+      <nav>
+        <%= render 'welcome/menu-main' %>
+      </nav>
+    </div>
+
+    <div id="contentWrapper" class="col-sm-9 col-lg-10">
+
+      <% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
+
+
+      <%= yield %>
+    </div>
+  </div>
+</div>
+</section>
+<footer class=".footer text-center">
+  Developed by Jeremy Bernabe
+  </footer>
+
+  <script>
+  function eqHeight(){
+    var h = $('#contentWrapper').height();
+    console.log(h);
+      if($(window).width() >= 768 ){
+    $("#navWrapper").attr('style','height: '+ h+'px' );
+  }else{
+    $("#navWrapper").attr('style','height: auto' );
+  }
+    
+  }
+
+  $(".navbar-toggle").click(function(){
+    console.log('hi');
+    #("#navWrapper").toggle('slow');
+  });
+
+  </script>
+
+  </body>
+</html>

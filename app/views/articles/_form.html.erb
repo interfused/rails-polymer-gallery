@@ -1,0 +1,37 @@
+<%= form_for @article do |f| %>
+
+  <% if @article.errors.any? %>
+    <div id="error_explanation" class="alert alert-warning">
+      <p>
+        <%= pluralize(@article.errors.count, "error") %> prohibited
+        this article from being saved:
+      </p>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+ <div class="form-group">
+    <%= f.label :title %>
+   <!-- <input type="email" class="form-control" id="email"> -->
+   <%= f.text_field :title, :class => 'form-control' %>
+  </div>
+ 
+  <div class="form-group">
+    <%= f.label :text %>
+    <%= f.text_area :text, :class => 'form-control' %>
+  </div>
+ 
+  <p>
+    <%= f.submit 'Create New Article', :class => 'btn btn-primary' %>
+  </p>
+ 
+<% end %>
+<!-- http://guides.rubyonrails.org/getting_started.html#using-partials-to-clean-up-duplication-in-views --> 
+<!-- 
+NOTE REGARDING
+http://stackoverflow.com/questions/13793681/titlecase-only-capitalizes-first-word-in-f-label
+-->

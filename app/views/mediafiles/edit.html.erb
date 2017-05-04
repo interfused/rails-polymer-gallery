@@ -1,0 +1,14 @@
+<% if logged_in? %>
+<h2>Edit Mediafile</h2>
+
+<detail-element alttext="<%= @mediafile.altText %>" imgurl="<%= @mediafile.imgUrl %>" category="<%= @mediafile.category %>" description="<%= @mediafile.description %>"></detail-element>
+<hr>
+		<%= render('form') %>
+<hr>
+<%= link_to 'Back to Media Files', mediafiles_path %>
+<% else %>
+NICE TRY. You need to be an admin to edit
+<script type="text/javascript">
+    window.location.href="<%= mediafiles_path %>"  // put your correct path in a string here
+  </script>
+<% end %>

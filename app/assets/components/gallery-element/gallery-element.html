@@ -1,0 +1,21 @@
+<dom-module id="gallery-element">
+  <link rel="stylesheet" href="gallery-element.css" />
+  <template>
+  	<div class$="{{theme}}">
+
+   	<div class="imgContent" on-click="handleClick" >
+
+   	<div class="img" style$="background-image:url({{imgurl}});"></div>
+<!--   	{{imgurl}} -->
+    <div id="overviewText">{{alttext}}</div>
+   	</div>
+    <!-- 
+   	<div>
+   		{{description}}<br>
+   		{{category}}
+   	</div> -->
+</div>
+  </template>
+
+  <script src="gallery-element.js"></script>
+</dom-module>

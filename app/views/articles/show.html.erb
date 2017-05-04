@@ -1,0 +1,49 @@
+<h2>Article Content below</h2>
+<div class="title">
+<%= @article.title %>
+</div>
+
+<div class="content">
+<%= @article.text %>
+</div>
+<hr>
+<div>
+	<h3>Comments</h3>
+	<% if @article.comments.length === 0 %>
+	<p>no comments exist</p>
+	<% end 	%>
+
+	<!-- 
+	<% @article.comments.each do |comment| %>
+		<%= comment.body %>
+		<p class="fineprint"><%= comment.commenter %></p>
+
+	<% end %>
+	-->
+	<%= render @article.comments %>
+</div>
+
+<div>
+<hr>	
+<h4>Add a comment:</h4>
+<!-- 
+<%= form_for([@article, @article.comments.build]) do |f| %>
+  <p>
+    <%= f.label :commenter %><br>
+    <%= f.text_field :commenter %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+-->
+<%= render 'comments/form' %>
+
+</div>
+<hr>
+<%= link_to 'Back to Articles', articles_path %>
+<%= link_to 'Edit', edit_article_path(@article) %>

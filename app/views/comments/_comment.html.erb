@@ -1,0 +1,6 @@
+<%= comment.body %>
+
+<p class="fineprint">--<%= comment.commenter %></p>
+<p><%= link_to 'Destroy', [comment.article, comment],
+			method: :delete,
+			data: {confirm: 'Are you sure?'}  %></p>

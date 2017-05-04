@@ -1,0 +1,9 @@
+<% provide(:title, @user.first_name) %>
+
+<h1>Hi <%= @user.first_name %>, Welcome Back</h1> 
+
+<ul>
+	<li>First: <%= @user.first_name %></li>
+	<li>Last: <%= @user.last_name %></li>
+	<li>Email: <%= @user.email %></li>
+</ul>

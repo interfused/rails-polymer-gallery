@@ -1,0 +1,39 @@
+<ul id="mainMenu">
+
+	<li><%= nav_link 'Home', root_path %></li>
+	<li><%= nav_link 'Gallery Element', "/page2" %></li>
+	
+	<!-- <li><a href="/page3">Detail Element</a></li> -->
+	<li><%= nav_link 'Detail Element', "/page3" %></li>
+	
+<!--	<li><%= link_to 'My Articles', controller: 'articles' %></li> -->
+<!--	<li><%= link_to 'Gallery', controller: 'mediafiles' %></li> -->
+	<li><%= nav_link 'Gallery', controller: 'mediafiles' %></li>
+
+	<% if logged_in? %>
+          <li>
+                <%= link_to "Log out", logout_path, method: :delete %>
+              </li>
+          <!-- <li><%= link_to "Users", '#' %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Account <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Settings", '#' %></li> 
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Log out", logout_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+      -->
+        <% else %>
+          <!-- <li><%= link_to "Log in", login_path %> </li> -->
+          <li><%= nav_link 'Log in', login_path %></li>
+          <li><%= nav_link "Signup", signup_path %></li>
+        <% end %>
+
+
+</ul>

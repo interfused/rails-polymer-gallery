@@ -1,0 +1,117 @@
+:host{
+    font-size: 16px;
+    font-family: sans-serif;
+    display: block;
+    color: #dddddd;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :host a{color:#fff;}
+  /*
+  ::slotted(*) {
+    font-family: sans-serif;
+    color:green;
+  }
+  ::slotted(*) a {
+    font-family: sans-serif;
+    color:#ff0;
+  }
+  */
+  @keyframes dropHeaderMobile {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes dropHeader {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes rotateOnce {
+    0% {
+      transform: rotate(0deg) ;
+      transform-origin: 50% 50%;
+    }
+    50% {;
+      transform-origin: 50% 50%;
+    }
+    100% {
+      transform: rotate(360deg);
+      transform-origin: 50% 50%;
+    }
+  }
+  h2{
+    text-transform: uppercase;
+  }
+  #detail{
+    position: relative;
+    opacity:1;
+    overflow: hidden;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+  }
+  #detail.closed {
+    opacity: 0;
+    display: none;
+  }
+  #imgWrapper{
+    font-size: 0;
+    position: relative;
+    z-index: 5;
+  }
+  #imgWrapper img{
+    width:100%;
+    height: auto;
+  }
+  #detailText{
+    position: relative;
+    z-index: 2;
+    animation: 1s ease-out 0s .75 dropHeaderMobile;
+    box-sizing:border-box;
+    background-color: rgba(180,180,180,0.9);
+    color: #fff;
+    padding:2em;
+  }
+  #closeBtn{
+    display: block;
+    font-size: 24px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    cursor: pointer;
+    color: #ffffff;
+  }
+  /*
+   #closeBtn:hover{
+    animation: 1s ease-out 0s .75 rotateOnce;
+   }
+   */
+   button{
+    margin-top: 2em;
+    padding: .5em 1em;
+    background: #212121;
+    color: #ffffff;
+  }
+  @media(min-width:768px){
+    #detailText{
+      z-index: 10;
+      width: 30%;
+      height:100%;
+      animation: 1s ease-out 0s .75 dropHeader;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }

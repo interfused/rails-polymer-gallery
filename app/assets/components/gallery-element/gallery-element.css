@@ -1,0 +1,73 @@
+:host {
+  display: block;
+}
+
+:host a{color:#fff;}
+
+/*
+  ::slotted(*) {
+    font-family: sans-serif;
+  }
+  ::slotted(*) a {
+    font-family: sans-serif;
+    color:#ff0;
+  }
+  */
+  /* anim */
+  .imgContent{
+    position: relative;
+  }
+  imgContent img{
+    vertical-align: middle;
+  }
+  .imgContent .img, #overviewText{
+    transition: all .4s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+    -o-transition: all .4s ease;
+  }
+  .imgContent{
+    display: block;
+    padding-bottom:50%;
+    overflow: hidden;
+    background-color: #212121;
+    cursor: pointer;
+    text-align: center;
+  }
+  .imgContent .img{
+        position: absolute;
+    top:0;
+    left: 0;
+    display: block;
+    width:100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+  }
+  .imgContent:hover .img{
+    opacity: .5;
+    transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -ms-transform: scale(1.5); /* IE 9 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1.5, M12=0, M21=0, M22=1.5, SizingMethod='auto expand')"; /* IE8 */
+    filter: progid:DXImageTransform.Microsoft.Matrix(M11=1.5, M12=0, M21=0, M22=1.5, SizingMethod='auto expand'); /* IE6 and 7 */ 
+  }
+  #textDetail{
+    display: none;
+  }
+  #overviewText{
+    opacity: 0;
+    position: absolute;
+    width:100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: #fff;
+  }
+  .imgContent:hover #overviewText{
+    opacity:1;
+  }

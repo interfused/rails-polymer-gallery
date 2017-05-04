@@ -1,0 +1,46 @@
+<%= form_for @mediafile do |f| %>
+
+  <% if @mediafile.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@mediafile.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @mediafile.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+
+  <div class="form-group">
+    <%= f.label :altText,"Alt Text" %>
+    <%= f.text_field :altText, :class => 'form-control' %>
+  </div>
+ 
+  <div class="form-group">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, :class => 'form-control' %>
+  </div>
+ 
+ <div class="form-group">
+    <%= f.label :imgUrl,"img URL" %><br>
+    <%= f.text_field :imgUrl, :class => 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :category %><br>
+    <%= f.text_field :category, :class => 'form-control' %>
+  </div>
+  <p class="text-center">
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+<!-- http://guides.rubyonrails.org/getting_started.html#using-partials-to-clean-up-duplication-in-views --> 
+<!-- 
+NOTE REGARDING
+http://stackoverflow.com/questions/13793681/titlecase-only-capitalizes-first-word-in-f-label
+-->

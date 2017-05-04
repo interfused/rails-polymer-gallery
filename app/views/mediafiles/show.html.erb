@@ -1,0 +1,23 @@
+<h2>Media File Content below</h2>
+<div class="title">
+altText: <%= @mediafile.altText %>
+</div>
+
+<div class="content">
+	
+<p>Description: <%= @mediafile.description %></p>
+<p>imgUrl: <%= @mediafile.imgUrl %></p>
+<p>category: <%= @mediafile.category %></p>
+</div>
+
+<hr>
+<gallery-element 
+        alttext="<%= @mediafile.altText %>" 
+        imgurl="<%= @mediafile.imgUrl %>" 
+        category="<%= @mediafile.category %>" 
+        description="<%= @mediafile.description %>"
+        >
+      </gallery-element>
+<hr>
+<%= link_to 'Back to Media Files', mediafiles_path, :class => 'btn btn-primary' %>
+<%= link_to 'Edit', edit_mediafile_path(@mediafile), :class => 'btn btn-primary' %>
