@@ -42,8 +42,8 @@
 	<!-- admin menu: -->
   <div class="btn-group btn-group-xs" role="group" aria-label="...">
    <!--   <%= link_to 'Show', mediafile_path(mediafile), :class=>'btn btn-default' %> -->
-   <%= link_to 'Edit', edit_mediafile_path(mediafile), :class=>'btn btn-default' %>
-   <%= link_to 'Delete', mediafile_path(mediafile), method: :delete, :class=>'btn btn-default', data:{confirm: 'Are you sure you want to delete this?'} %>
+   <%= link_to 'Edit', edit_mediafile_path(mediafile), :class=>'btn btn-default btn-edit' %>
+   <%= link_to 'Delete', mediafile_path(mediafile), method: :delete, :class=>'btn btn-default btn-delete', data:{confirm: 'Are you sure you want to delete this?'} %>
  </div>
 </div>
 <% end %>
